@@ -1,6 +1,6 @@
 import streamlit as st
 import numpy as np
-#import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 from PIL import Image
 
 def plot_ipr(jf,prf,pr,qo_max):
@@ -12,13 +12,13 @@ def plot_ipr(jf,prf,pr,qo_max):
     pw=np.arange(0,pr)
     qop=qo_max*(1-0.2*pw/pr-0.8*(pw/pr)**2)
     st.write("Yeah!! Done")
-    #fig, ax = plt.subplots()
-    #plt.plot(pwf,qo,label='Future IPR')
-    #plt.plot(pw,qop,label='Present IPR')
-    #plt.legend()
-    #plt.xlabel('Pwf, Bottomhole flowing pressure (Psig)')
-    #plt.ylabel('qo, Flow rate (STB/day)')
-    #st.pyplot(fig)
+    fig, ax = plt.subplots()
+    plt.plot(pwf,qo,label='Future IPR')
+    plt.plot(pw,qop,label='Present IPR')
+    plt.legend()
+    plt.xlabel('Pwf, Bottomhole flowing pressure (Psig)')
+    plt.ylabel('qo, Flow rate (STB/day)')
+    st.pyplot(fig)
 
     
 def prod_index(qo,pwf,pr,krof,uof,bof,kro,uo,bo):
