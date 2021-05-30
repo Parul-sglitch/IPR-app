@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 from PIL import Image
 
 def plot_ipr(jf,prf,pr,qo_max):
+    st.write("Yeah!! done.")
     jf=float(jf)
     prf=float(prf)
     pr=float(pr)
