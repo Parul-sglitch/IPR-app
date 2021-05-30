@@ -4,7 +4,6 @@ import matplotlib.pyplot as plt
 from PIL import Image
 
 def plot_ipr(jf,prf,pr,qo_max):
-    #st.write("Yeah!! done.")
     jf=float(jf)
     prf=float(prf)
     pr=float(pr)
@@ -43,11 +42,11 @@ def main():
         st.image(img, width=200)
     with col2:
         st.title("Future IPR prediction Using Standing's Extension of Vogel's Work for Saturated Oil Reservoir")
-    st.sidebar.title('Enter Input Values:')
-    st.sidebar.write('Initial Reservoir condition: ')
-    qo=st.sidebar.text_input('Qo, Stabilized Flow rate (STB/day)')
-    pwf=st.sidebar.text_input('Pwf, Bottomhole flowing pressure (Psig)')
-    col3,col4=st.sidebar.beta_columns([1,1])
+    st.subheader('Enter Input Values:')
+    st.write('Initial Reservoir condition: ')
+    qo=st.text_input('Qo, Stabilized Flow rate (STB/day)')
+    pwf=st.text_input('Pwf, Bottomhole flowing pressure (Psig)')
+    col3,col4=st.beta_columns([1,1])
     with col3:
         st.subheader('Current Values:')
         pr=st.text_input('Pr, Reservoir pressure (psig)')
@@ -60,7 +59,7 @@ def main():
         krof=st.text_input('Kro, Relative Oil permeability')
         uof=st.text_input('uo, Oil Viscosity (cp)')
         bof=st.text_input('Bo, Oil Formation volume factor (bbl/STB)')
-    submit=st.sidebar.button('Predict')
+    submit=st.button('Predict')
     if submit:
         jf,qo_max=prod_index(qo,pwf,pr,krof,uof,bof,kro,uo,bo)
         plot_ipr(jf,prf,pr,qo_max)
