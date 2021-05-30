@@ -11,7 +11,6 @@ def plot_ipr(jf,prf,pr,qo_max):
     qo=(jf*prf)*(1-0.2*pwf/prf-0.8*(pwf/prf)**2)/1.8
     pw=np.arange(0,pr)
     qop=qo_max*(1-0.2*pw/pr-0.8*(pw/pr)**2)
-    st.write("Yeah!! Done")
     fig, ax = plt.subplots()
     plt.plot(pwf,qo,label='Future IPR')
     plt.plot(pw,qop,label='Present IPR')
